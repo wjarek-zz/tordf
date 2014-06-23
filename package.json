@@ -1,0 +1,30 @@
+{
+  "author": "Jarek Wilkiewicz",
+  "name": "tordf",
+  "description": "Extracts RDF from a URL",
+  "version": "0.0.1",
+  "repository": {
+    "url": ""
+  },
+  "bugs": {
+    "url": ""
+  },
+  "main": "./lib/tordf",
+  "keywords": [
+    "RDF",
+    "JSON-LD",
+    "triplify",
+    ""
+  ],
+  "bin": {
+    "tordf": "./bin/tordf"
+  },
+  "dependencies": {
+    "request"     : ">=2.22.0",
+    "jsonld"      : ">=0.2.13",
+    "htmlparser2" : ">=3.7.2"
+    },
+  "engines": {
+    "node": "0.10.*"
+  }
+}
