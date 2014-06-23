@@ -2,10 +2,11 @@
   "author": "Jarek Wilkiewicz",
   "name": "tordf",
   "description": "Extracts RDF from a URL",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "repository": {
     "url": "https://github.com/wjarek/tordf.git"
   },
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/wjarek/tordf/issues"
   },
