@@ -17,11 +17,13 @@ limitations under the License.
 var program = require('commander');
 var path = require("path");
 var fs = require('fs');
-var lib = path.join(path.dirname(fs.realpathSync(__filename)), '../lib');
+var fspath = path.dirname(fs.realpathSync(__filename));
+var npmspec = require(path.join(fspath, '../package.json'));
+var lib = path.join(fspath, '../lib');
 var tordf = require(path.join(lib,"tordf"));
 
 program
-	.version("0.0.1")
+	.version(npmspec.version)
 	.usage("<url>...")
 	.on('--help', function(){
 		console.log('  '+path.basename(__filename) + ' extracts JSON-LD from url(s) and converts it to RDF triples.');
