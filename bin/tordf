@@ -14,26 +14,28 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+"use strict";
+
 var program = require('commander');
 var path = require("path");
 var fs = require('fs');
 var fspath = path.dirname(fs.realpathSync(__filename));
 var npmspec = require(path.join(fspath, '../package.json'));
 var lib = path.join(fspath, '../lib');
-var tordf = require(path.join(lib,"tordf"));
+var tordf = require(path.join(lib, "tordf"));
 
 program
-	.version(npmspec.version)
-	.usage("<url>...")
-	.on('--help', function(){
-		console.log('  '+path.basename(__filename) + ' extracts JSON-LD from url(s) and converts it to RDF triples.');
-		console.log('');
-  		console.log('  Examples:');
-  		console.log('');
-  		console.log('    $ ' + path.basename(__filename) + 
-  			' http://jarekandshawnmusic.com/artist/DualCore');
-  		console.log('');
-	});
+    .version(npmspec.version)
+    .usage("<url>...")
+    .on('--help', function () {
+        console.log('  ' + path.basename(__filename) + ' extracts JSON-LD from url(s) and converts it to RDF triples.');
+        console.log('');
+        console.log('  Examples:');
+        console.log('');
+        console.log('    $ ' + path.basename(__filename) +
+            ' http://jarekandshawnmusic.com/artist/DualCore');
+        console.log('');
+    });
 
 program.parse(process.argv);
 
@@ -43,7 +45,6 @@ if (!program.args.length) {
 }
 
 program.args.forEach(function (url) {
-	tordf(url)		
-		.pipe(process.stdout);		
+    tordf(url)
+        .pipe(process.stdout);
 });
-
